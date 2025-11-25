@@ -1,0 +1,33 @@
+/* style.css */
+
+/* Configurações Gerais */
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Classes utilitárias personalizadas para o Carrossel */
+.carousel-slide {
+    /* Garante que a imagem não distorça */
+    min-width: 100%; 
+}
+
+/* Efeito de brilho extra no hover dos cards (opcional) */
+.hover\:shadow-3xl:hover {
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+}
+
+/* Ajuste para o botão do WhatsApp pulsar levemente */
+@keyframes pulse-green {
+    0% { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.7); }
+    70% { box-shadow: 0 0 0 10px rgba(34, 197, 94, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0); }
+}
+
+.bg-green-500:hover {
+    animation: pulse-green 2s infinite;
+}

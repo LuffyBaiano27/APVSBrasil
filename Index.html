@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sua Proteção Veicular Premium</title>
+    <meta name="description" content="Especialista em Proteção Veicular.">
+    
+    <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#0f2963", 
+                        accent: "#D4AF37", 
+                        diamond: "#22d3ee",
+                        dark: {
+                            900: "#111827",
+                            800: "#1F2937",
+                            700: "#374151"
+                        },
+                        gold: {
+                            100: "#FDF6E3",
+                            500: "#D4AF37",
+                            600: "#B8860B"
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                        brand: ['Montserrat', 'sans-serif'] 
+                    },
+                    backgroundImage: {
+                        'gradient-gold': 'linear-gradient(135deg, #D4AF37 0%, #FFD700 50%, #B8860B 100%)',
+                        'gradient-diamond': 'linear-gradient(135deg, #06b6d4 0%, #22d3ee 50%, #cffafe 100%)'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        details > summary { color: #e5e7eb; }
+        details[open] summary { color: #D4AF37; }
+        
+        .video-container video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    </style>
+</head>
+<body class="min-h-screen bg-dark-900 text-gray-100 font-sans">
+
+    <header class="relative overflow-hidden">
+        <div class="carousel-container relative h-96 md:h-[600px]">
+            <div class="carousel-slides flex transition-transform duration-500 ease-in-out">
+                <div class="carousel-slide min-w-full relative">
+                    <img src="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80" alt="Carro de luxo" class="w-full h-96 md:h-[600px] object-cover"/>
+                    <div class="absolute inset-0 bg-black bg-opacity-70"></div>
+                </div>
+                <div class="carousel-slide min-w-full relative">
+                    <img src="https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80" alt="Proteção na estrada" class="w-full h-96 md:h-[600px] object-cover"/>
+                    <div class="absolute inset-0 bg-black bg-opacity-70"></div>
+                </div>
+                <div class="carousel-slide min-w-full relative">
+                    <img src="https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80" alt="Segurança familiar" class="w-full h-96 md:h-[600px] object-cover"/>
+                    <div class="absolute inset-0 bg-black bg-opacity-70"></div>
+                </div>
+            </div>
+            
+            <button class="carousel-prev absolute left-4 top-1/2 transform -translate-y-1/2 bg-white bg-opacity-10 hover:bg-opacity-20 text-white p-3 rounded-full transition-all duration-300 border border-white/30"><i class="fas fa-chevron-left"></i></button>
+            <button class="carousel-next absolute right-4 top-1/2 transform -translate-y-1/2 bg-white bg-opacity-10 hover:bg-opacity-20 text-white p-3 rounded-full transition-all duration-300 border border-white/30"><i class="fas fa-chevron-right"></i></button>
+        </div>
+
+        <div class="absolute top-0 left-0 w-full z-10">
+            <div class="container mx-auto px-4 py-6">
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <div class="flex items-center space-x-3 mb-4 md:mb-0">
+                        <div class="w-14 h-14 bg-gradient-gold rounded-full flex items-center justify-center shadow-lg shadow-gold-500/20 transform hover:scale-105 transition-transform duration-300">
+                            <i class="fas fa-shield-alt text-primary text-2xl"></i>
+                        </div>
+                    </div>
+                    <nav class="flex space-x-6 bg-black bg-opacity-40 backdrop-blur-md rounded-full px-6 py-3 border border-white/10">
+                        <a href="#biografia" class="text-gray-300 hover:text-accent transition-colors duration-300 font-medium hover:scale-110 transform">Biografia</a>
+                        <a href="#avaliacoes" class="text-gray-300 hover:text-accent transition-colors duration-300 font-medium hover:scale-110 transform">Avaliações</a>
+                        <a href="#planos" class="text-gray-300 hover:text-accent transition-colors duration-300 font-medium hover:scale-110 transform">Planos</a>
+                        <a href="#contato" class="text-gray-300 hover:text-accent transition-colors duration-300 font-medium hover:scale-110 transform">Contato</a>
+                    </nav>
+                </div>
+            </div>
+        </div>
+
+        <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center text-white z-5 w-full px-4">
+            <div class="mb-8 flex flex-col items-center animate-fadeIn">
+                
+                <img src="https://via.placeholder.com/250x150/000000/D4AF37?text=Sua+Logo+Aqui" alt="Sua Logomarca" class="w-48 md:w-64 h-auto mb-6 drop-shadow-2xl transform hover:scale-105 transition-transform duration-500">
+                
+                <h1 class="text-6xl md:text-8xl font-black tracking-tighter drop-shadow-2xl font-brand text-white">
+                    APVS
+                    <span class="block text-xl md:text-2xl font-light tracking-[0.5em] mt-2 uppercase text-accent font-sans">Brasil</span>
+                </h1>
+            </div>
+            <div class="w-20 h-1 bg-accent mx-auto mb-8 rounded-full"></div>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-4 py-12">
+        
+        <section id="biografia" class="mb-20 pt-10">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold text-white mb-4 relative inline-block">
+                    Quem Sou Eu
+                    <div class="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-16 h-1 bg-gradient-to-r from-primary to-accent rounded-full"></div>
+                </h2>
+                <p class="text-gray-400 text-lg max-w-2xl mx-auto">Conheça minha trajetória e como posso ajudar você</p>
+            </div>
+            
+            <div class="flex flex-col gap-8">
+                
+                <div class="bg-dark-800 rounded-2xl shadow-xl border border-dark-700 overflow-hidden hover:border-accent/30 transition-all duration-500 min-h-[500px]">
+                    <div class="flex flex-col md:flex-row h-full">
+                        <div class="w-full md:w-5/12 h-96 md:h-auto relative group">
+                            <img src="https://i.imgur.com/Pz117A1.jpeg" alt="Sua Foto de Perfil" class="absolute inset-0 w-full h-full object-cover md:object-contain bg-dark-900 transition-transform duration-700"/>
+                            <div class="absolute inset-0 bg-gradient-to-t from-dark-800 to-transparent md:bg-gradient-to-r md:from-transparent md:to-dark-800 opacity-50"></div>
+                        </div>
+                        <div class="w-full md:w-7/12 p-8 md:p-14 flex flex-col justify-center">
+                            <div class="mb-6">
+                                <span class="text-accent font-bold tracking-wider text-sm uppercase">Consultor Especialista</span>
+                                <h3 class="text-4xl font-bold text-white mt-2">Minha História na APVS</h3>
+                            </div>
+                            <div class="prose text-gray-300 leading-relaxed mb-8 text-lg">
+                                <p class="mb-4">Olá! Sou um apaixonado por garantir a tranquilidade dos meus clientes. Com mais de 5 anos de experiência no mercado de proteção veicular, construí uma carreira baseada na confiança.</p>
+                                <p>Minha missão vai além de vender um plano; é entender a necessidade de cada motorista e oferecer a solução exata que protege seu patrimônio.</p>
+                            </div>
+                            <div class="flex flex-col sm:flex-row items-center gap-6 mt-4">
+                                <a href="#contato" class="inline-flex items-center bg-accent hover:bg-yellow-600 text-dark-900 font-bold py-4 px-10 rounded-full transition-all duration-300 shadow-lg shadow-accent/20 transform hover:scale-105 animate-pulse">
+                                    <i class="fab fa-whatsapp mr-2 text-2xl"></i> Falar Comigo Agora
+                                </a>
+                                <div class="flex items-center space-x-2">
+                                    <span class="text-sm text-gray-400 font-medium bg-dark-700 px-4 py-2 rounded-full border border-dark-700">+500 Clientes Satisfeitos</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    
+                    <div class="bg-dark-800 rounded-2xl shadow-xl border border-dark-700 overflow-hidden flex flex-col hover:border-accent/30 transition-all duration-500">
+                        <div class="h-96 w-full relative bg-dark-900">
+                            <img src="https://images.unsplash.com/photo-1552519507-da3b142c6e3d?ixlib=rb-1.2.1&auto=format&fit=crop&w=640&q=80" alt="Especialização Carros" class="absolute inset-0 w-full h-full object-contain">
+                            <div class="absolute bottom-4 left-6 flex items-center bg-dark-900/80 p-2 rounded-lg backdrop-blur-sm">
+                                <div class="w-10 h-10 bg-accent rounded-full flex items-center justify-center shadow-lg">
+                                    <i class="fas fa-star text-dark-900 text-lg"></i>
+                                </div>
+                                <h3 class="ml-3 text-lg font-bold text-white">Especialização</h3>
+                            </div>
+                        </div>
+                        <div class="p-8">
+                            <p class="text-gray-400 leading-relaxed text-lg">
+                                Especialista em montar planos personalizados que atendem desde carros populares até veículos de luxo e frotas.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="bg-dark-800 rounded-2xl shadow-xl border border-dark-700 overflow-hidden flex flex-col hover:border-accent/30 transition-all duration-500">
+                        <div class="h-96 w-full relative bg-dark-900">
+                            <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?ixlib=rb-1.2.1&auto=format&fit=crop&w=640&q=80" alt="Compromisso Cliente" class="absolute inset-0 w-full h-full object-contain">
+                            <div class="absolute bottom-4 left-6 flex items-center bg-dark-900/80 p-2 rounded-lg backdrop-blur-sm">
+                                <div class="w-10 h-10 bg-primary rounded-full flex items-center justify-center shadow-lg">
+                                    <i class="fas fa-handshake text-white text-lg"></i>
+                                </div>
+                                <h3 class="ml-3 text-lg font-bold text-white">Compromisso</h3>
+                            </div>
+                        </div>
+                        <div class="p-8">
+                            <p class="text-gray-400 leading-relaxed text-lg">
+                                Meu compromisso é oferecer suporte contínuo, agilidade no acionamento de sinistros e atendimento humanizado.
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section id="avaliacoes" class="mb-20">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold text-white mb-4 relative inline-block">
+                    Clientes Reais
+                    <div class="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-16 h-1 bg-gradient-to-r from-accent to-primary rounded-full"></div>
+                </h2>
+                <p class="text-gray-400 text-lg max-w-2xl mx-auto">Veja o que dizem sobre o meu atendimento</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                
+                <div class="bg-dark-800 rounded-2xl p-4 border border-dark-700 hover:border-accent/50 transition-all shadow-lg flex flex-col">
+                    <div class="video-container w-full h-[500px] bg-black rounded-xl overflow-hidden relative group mb-4">
+                        <video controls class="w-full h-full object-cover">
+                            <source src="videos/cliente1.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    
+                    <div class="text-center bg-dark-900/50 p-4 rounded-xl border border-dark-700">
+                        <div class="flex justify-center text-accent text-sm mb-2 space-x-1">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                        <h4 class="font-bold text-white text-xl">João Almeida</h4>
+                        <p class="text-gray-500 text-sm mt-1">Cliente há 2 anos</p>
+                    </div>
+                </div>
+
+                <div class="bg-dark-800 rounded-2xl p-4 border border-dark-700 hover:border-accent/50 transition-all shadow-lg flex flex-col">
+                    <div class="video-container w-full h-[500px] bg-black rounded-xl overflow-hidden relative mb-4">
+                        <video controls class="w-full h-full object-cover">
+                            <source src="videos/cliente2.mp4" type="video/mp4">
+                        </video>
+                    </div>
+
+                    <div class="text-center bg-dark-900/50 p-4 rounded-xl border border-dark-700">
+                        <div class="flex justify-center text-accent text-sm mb-2 space-x-1">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                        <h4 class="font-bold text-white text-xl">Maria Souza</h4>
+                        <p class="text-gray-500 text-sm mt-1">Plano Ouro</p>
+                    </div>
+                </div>
+
+                <div class="bg-dark-800 rounded-2xl p-4 border border-dark-700 hover:border-accent/50 transition-all shadow-lg flex flex-col">
+                    <div class="video-container w-full h-[500px] bg-black rounded-xl overflow-hidden relative mb-4">
+                        <video controls class="w-full h-full object-cover">
+                            <source src="videos/cliente3.mp4" type="video/mp4">
+                        </video>
+                    </div>
+
+                    <div class="text-center bg-dark-900/50 p-4 rounded-xl border border-dark-700">
+                        <div class="flex justify-center text-accent text-sm mb-2 space-x-1">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                        <h4 class="font-bold text-white text-xl">Carlos Pereira</h4>
+                        <p class="text-gray-500 text-sm mt-1">Sinistro Resolvido</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="planos" class="mb-20">
+            <div class="text-center mb-8">
+                <h2 class="text-3xl font-bold text-white mb-2">Nossos Planos</h2>
+                <p class="text-gray-400">Escolha a proteção ideal para o seu perfil</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 items-end max-w-7xl mx-auto">
+                
+                <div class="bg-dark-800 rounded-xl p-6 shadow-lg border border-gray-600 hover:border-gray-400 hover:shadow-xl transition-all text-center">
+                    <div class="inline-block p-3 rounded-full bg-gray-700/30 mb-3">
+                         <i class="fas fa-shield-alt text-4xl text-gray-400"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-200">Prata</h3>
+                    <p class="text-sm text-gray-500 mb-4">Entrada</p>
+                    
+                    <ul class="text-sm text-gray-300 space-y-3 mb-6 text-left px-2 border-t border-gray-700 pt-4">
+                        <li class="flex items-start"><i class="fas fa-check text-green-500 mt-1 mr-2"></i><span>Assistência 24h - <strong>200 KM</strong></span></li>
+                        <li class="flex items-start"><i class="fas fa-check text-green-500 mt-1 mr-2"></i><span>Roubo / Furto</span></li>
+                        <li class="flex items-start"><i class="fas fa-check text-green-500 mt-1 mr-2"></i><span>Colisão / PT</span></li>
+                        <li class="flex items-start"><i class="fas fa-check text-green-500 mt-1 mr-2"></i><span>Incêndio</span></li>
+                        <li class="flex items-start"><i class="fas fa-check text-green-500 mt-1 mr-2"></i><span>Fenômenos da Natureza</span></li>
+                        <li class="flex items-start"><i class="fas fa-check text-green-500 mt-1 mr-2"></i><span>Terceiros (PAR) R$ 50.000</span></li>
+                        <li class="flex items-start"><i class="fas fa-check text-green-500 mt-1 mr-2"></i><span>Auxílio Funeral</span></li>
+                        <li class="flex items-start"><i class="fas fa-check text-green-500 mt-1 mr-2"></i><span>Assistência PET</span></li>
+                        <li class="flex items-start"><i class="fas fa-check text-green-500 mt-1 mr-2"></i><span>Assistência Residencial</span></li>
+                    </ul>
+                    <a href="#contato" class="block w-full py-2 bg-gray-700 hover:bg-gray-600 text-white font-bold rounded-lg text-sm transition-colors">Cotar Prata</a>
+                </div>
+
+                <div class="bg-gradient-to-b from-primary to-black rounded-xl p-6 shadow-2xl border-2 border-accent transform scale-105 z-10 text-center relative">
+                    <div class="absolute top-0 right-0 bg-accent text-dark-900 text-[10px] font-bold px-2 py-1 rounded-bl-lg">MAIS VENDIDO</div>
+                    <div class="inline-block p-3 rounded-full bg-accent/10 mb-3">
+                         <i class="fas fa-crown text-5xl text-accent"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-white">Ouro</h3>
+                    <p class="text-sm text-blue-200 mb-4">Recomendado</p>
+                    
+                    <ul class="text-sm text-gray-100 space-y-3 mb-6 text-left px-2 border-t border-blue-900 pt-4">
+                        <li class="flex items-start"><i class="fas fa-check text-accent mt-1 mr-2"></i><span>Assistência 24h - <strong>300 KM</strong></span></li>
+                        <li class="flex items-start"><i class="fas fa-check text-accent mt-1 mr-2"></i><span><strong>Carro Reserva - 7 Dias</strong></span></li>
+                        <li class="flex items-start"><i class="fas fa-check text-accent mt-1 mr-2"></i><span><strong>Vidros - Desc. 70%</strong></span></li>
+                        <li class="flex items-start"><i class="fas fa-check text-accent mt-1 mr-2"></i><span>Roubo / Furto</span></li>
+                        <li class="flex items-start"><i class="fas fa-check text-accent mt-1 mr-2"></i><span>Colisão / PT</span></li>
+                        <li class="flex items-start"><i class="fas fa-check text-accent mt-1 mr-2"></i><span>Incêndio</span></li>
+                        <li class="flex items-start"><i class="fas fa-check text-accent mt-1 mr-2"></i><span>Fenômenos da Natureza</span></li>
+                        <li class="flex items-start"><i class="fas fa-check text-accent mt-1 mr-2"></i><span>Terceiros (PAR) R$ 50.000</span></li>
+                        <li class="flex items-start"><i class="fas fa-check text-accent mt-1 mr-2"></i><span>Auxílio Funeral + PET + Residencial</span></li>
+                    </ul>
+                    <a href="#contato" class="block w-full py-3 bg-accent hover:bg-yellow-600 text-dark-900 font-bold rounded-lg text-sm transition-colors shadow-lg shadow-accent/20">QUERO OURO</a>
+                </div>
+
+                <div class="bg-dark-800 rounded-xl p-6 shadow-lg border border-cyan-500 hover:shadow-cyan-500/20 hover:shadow-xl transition-all text-center relative overflow-hidden">
+                    <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-cyan-400 to-blue-500"></div>
+                    
+                    <div class="inline-block p-3 rounded-full bg-cyan-900/20 mb-3">
+                         <i class="fas fa-gem text-4xl text-diamond"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-white">Diamante</h3>
+                    <p class="text-sm text-cyan-200 mb-4">VIP / Premium</p>
+                    
+                    <ul class="text-sm text-gray-300 space-y-3 mb-6 text-left px-2 border-t border-gray-700 pt-4">
+                        <li class="flex items-start"><i class="fas fa-check text-diamond mt-1 mr-2"></i><span>Assistência 24h - <strong>500 KM</strong></span></li>
+                        <li class="flex items-start"><i class="fas fa-check text-diamond mt-1 mr-2"></i><span><strong>Carro Reserva - 14 Dias</strong></span></li>
+                        <li class="flex items-start"><i class="fas fa-check text-diamond mt-1 mr-2"></i><span><strong>Terceiros (PAR) R$ 100.000</strong></span></li>
+                        <li class="flex items-start"><i class="fas fa-check text-diamond mt-1 mr-2"></i><span>Vidros - Desc. 70%</span></li>
+                        <li class="flex items-start"><i class="fas fa-check text-diamond mt-1 mr-2"></i><span>Roubo / Furto</span></li>
+                        <li class="flex items-start"><i class="fas fa-check text-diamond mt-1 mr-2"></i><span>Colisão / PT</span></li>
+                        <li class="flex items-start"><i class="fas fa-check text-diamond mt-1 mr-2"></i><span>Incêndio / Fenômenos</span></li>
+                        <li class="flex items-start"><i class="fas fa-check text-diamond mt-1 mr-2"></i><span>Auxílio Funeral + PET + Residencial</span></li>
+                    </ul>
+                    <a href="#contato" class="block w-full py-2 bg-gradient-to-r from-cyan-600 to-blue-600 hover:from-cyan-500 hover:to-blue-500 text-white font-bold rounded-lg text-sm transition-colors">Cotar Diamante</a>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="contato" class="mb-20 bg-gradient-to-br from-primary to-black rounded-3xl shadow-2xl p-8 md:p-12 max-w-4xl mx-auto border border-dark-700">
+            <div class="text-center text-white mb-8">
+                <h2 class="text-4xl font-bold mb-4">Entre em Contato</h2>
+                <p class="text-blue-200 text-xl">Faz o 1️⃣ e venha para melhor do Brasil!</p>
+            </div>
+            
+            <div class="flex flex-col items-center gap-8">
+                <a href="https://wa.me/71986463776" class="inline-flex items-center justify-center bg-green-600 hover:bg-green-500 text-white font-bold py-5 px-12 rounded-2xl transition-all duration-300 transform hover:scale-105 shadow-xl animate-pulse">
+                    <i class="fab fa-whatsapp text-4xl mr-4"></i>
+                    <span class="text-2xl">Falar no WhatsApp</span>
+                </a>
+                
+                <p class="text-blue-200 text-sm">Estou pronto para ajudar você a proteger seu veículo.</p>
+
+                <div class="flex flex-wrap justify-center gap-4 mt-4">
+                    <a href="SEU_LINK_INSTAGRAM" target="_blank" class="flex items-center gap-2 px-6 py-3 bg-gradient-to-tr from-purple-600 to-pink-500 text-white rounded-xl font-medium hover:scale-105 transition-transform shadow-lg">
+                        <i class="fab fa-instagram text-xl"></i>
+                        <span>Instagram</span>
+                    </a>
+                    
+                    <a href="SEU_LINK_FACEBOOK" target="_blank" class="flex items-center gap-2 px-6 py-3 bg-blue-700 text-white rounded-xl font-medium hover:scale-105 transition-transform shadow-lg">
+                        <i class="fab fa-facebook-f text-xl"></i>
+                        <span>Facebook</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section id="faq" class="mb-20 max-w-3xl mx-auto">
+            <div class="text-center mb-10">
+                <h2 class="text-3xl font-bold text-white mb-2">Dúvidas Frequentes</h2>
+                <p class="text-gray-400">Tire suas dúvidas antes de contratar</p>
+            </div>
+            <div class="space-y-4">
+                <div class="bg-dark-800 rounded-xl shadow-md overflow-hidden border border-dark-700 hover:border-accent/30 transition-all">
+                    <details class="group">
+                        <summary class="flex justify-between items-center font-medium cursor-pointer list-none p-6 bg-dark-800 hover:bg-dark-700 transition-colors">
+                            <span>A APVS faz consulta ao SPC/Serasa?</span>
+                            <span class="transition group-open:rotate-180 text-accent"><i class="fas fa-chevron-down"></i></span>
+                        </summary>
+                        <div class="text-gray-300 p-6 border-t border-dark-700">Não! Na APVS não realizamos análise de perfil ou consulta ao SPC/Serasa.</div>
+                    </details>
+                </div>
+                <div class="bg-dark-800 rounded-xl shadow-md overflow-hidden border border-dark-700 hover:border-accent/30 transition-all">
+                    <details class="group">
+                        <summary class="flex justify-between items-center font-medium cursor-pointer list-none p-6 bg-dark-800 hover:bg-dark-700 transition-colors">
+                            <span>Qual a abrangência da proteção?</span>
+                            <span class="transition group-open:rotate-180 text-accent"><i class="fas fa-chevron-down"></i></span>
+                        </summary>
+                        <div class="text-gray-300 p-6 border-t border-dark-700">Nossa proteção possui abrangência em todo o território nacional.</div>
+                    </details>
+                </div>
+                <div class="bg-dark-800 rounded-xl shadow-md overflow-hidden border border-dark-700 hover:border-accent/30 transition-all">
+                    <details class="group">
+                        <summary class="flex justify-between items-center font-medium cursor-pointer list-none p-6 bg-dark-800 hover:bg-dark-700 transition-colors">
+                            <span>Em caso de sinistro, demora para pagar?</span>
+                            <span class="transition group-open:rotate-180 text-accent"><i class="fas fa-chevron-down"></i></span>
+                        </summary>
+                        <div class="text-gray-300 p-6 border-t border-dark-700">O prazo médio em regulamento é de até 90 dias para indenização integral, mas prezamos pela agilidade.</div>
+                    </details>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-black text-white mt-20 py-12 border-t border-dark-700">
+        <div class="container mx-auto px-4 text-center">
+            <div class="flex items-center justify-center space-x-3 mb-6">
+                <div class="w-10 h-10 bg-gradient-gold rounded-full flex items-center justify-center text-primary"><i class="fas fa-shield-alt"></i></div>
+                <h3 class="text-2xl font-bold font-brand">APVS Brasil</h3>
+            </div>
+            <p class="text-gray-500 mb-6">Protegendo seu patrimônio com excelência.</p>
+            <p class="text-gray-600 text-sm">&copy; 2024 APVS Brasil. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
